@@ -1,0 +1,4 @@
+usr/bin/
+usr/lib/*/imagination/*.so
+usr/share/applications/imagination.desktop
+debian/upstream/net.sf.imagination.imagination.metainfo.xml /usr/share/metainfo/

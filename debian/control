@@ -1,0 +1,58 @@
+Source: imagination
+Section: video
+Priority: optional
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper-compat (= 13),
+               dh-exec,
+               doc-base,
+               docbook-xsl,
+               intltool,
+               libgtk-3-dev,
+               libsox-dev,
+               xsltproc
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Homepage: http://imagination.sf.net
+Vcs-Browser: https://salsa.debian.org/debian/imagination
+Vcs-Git: https://salsa.debian.org/debian/imagination.git
+
+Package: imagination
+Architecture: any
+Depends: imagination-common (= ${source:Version}),
+         sox,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: ffmpeg, libsox-fmt-all, libavcodec-extra-55, ${dist:Recommends}
+Description: DVD slide show maker
+ Imagination is a lightweight and user-friendly DVD slide show maker with
+ a clean interface and few dependencies. It only requires the ffmpeg encoder
+ to produce a movie to be burned with another application.
+ .
+ Imagination has the following features:
+   - Easy to operate.
+   - It can make a slideshow from photos selected by user.
+   - Support to VOB (DVD Video), OGV (Theora Vorbis), FLV (Flash Video) and
+     3GP (Mobile Phones) when exporting videos.
+   - Support screen resolutions from 128x96 pixels up to 1920x1080 pixels,
+     when exporting videos.
+   - Background audio (music, as MP3 files, or other audio files).
+   - Auto resize (optional) for images.
+   - Allow the users to select a background color.
+   - Over 50 transition effects.
+   - Zoom effect with duration time.
+   - Allow users to add explanatory texts (e.g. subtitles).
+ .
+ Imagination can be used to make presentations to be shown by a projector or
+ by a smart TV.
+
+Package: imagination-common
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: DVD slide show maker - common files
+ Imagination is a lightweight and user-friendly DVD slide show maker with
+ a clean interface and few dependencies. It only requires the ffmpeg encoder
+ to produce a movie to be burned with another application.
+ .
+ This package contains architecture independent files such as icons, pixmaps,
+ documentation, and translations.

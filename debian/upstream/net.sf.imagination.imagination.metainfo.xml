@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>net.sf.imagination.imagination</id>
+
+  <name>Imagination</name>
+  <summary>DVD slide show maker</summary>
+
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+
+  <description>
+    <p>
+      Imagination is a lightweight and user-friendly DVD slide show maker with  a clean interface and few dependencies. It only requires the ffmpeg encoder  to produce a movie to be burned with another application.    Imagination has the following features:     - Easy to operate.
+    </p>
+    <p>
+      - It can make a slideshow from photos selected by user.
+    </p>
+    <p>
+      - Support to VOB (DVD Video), OGV (Theora Vorbis), FLV (Flash Video) and 3GP (Mobile Phones) when exporting videos.
+    </p>
+    <p>
+      - Support screen resolutions from 128x96 pixels up to 1920x1080 pixels, when exporting videos.
+    </p>
+    <p>
+      - Background audio (music, as MP3 files, or other audio files).
+    </p>
+    <p>
+      - Auto resize (optional) for images.
+    </p>
+    <p>
+      - Allow the users to select a background color.
+    </p>
+    <p>
+      - Over 50 transition effects.
+    </p>
+    <p>
+      - Zoom effect with duration time.
+    </p>
+    <p>
+      - Allow users to add explanatory texts (e.g. subtitles).    Imagination can be used to make presentations to be shown by a projector or  by a smart TV.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">imagination.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window previewing Heart in transition effect</caption>
+      <image>http://imagination.sourceforge.net/screenshots/heart-in.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Main window showing the Clock Wipe family transitions</caption>
+      <image>http://imagination.sourceforge.net/screenshots/transitions_types.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Exporting the slide show</caption>
+      <image>http://imagination.sourceforge.net/screenshots/exporting.png</image>
+    </screenshot>
+  </screenshots>
+</component>

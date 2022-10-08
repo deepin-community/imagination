@@ -1,0 +1,2 @@
+# Not install .la files. See https://wiki.debian.org/ReleaseGoals/LAFileRemoval
+usr/lib/*/imagination/*.la

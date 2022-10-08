@@ -1,0 +1,307 @@
+imagination (3.6-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version 3.6.
+  * debian/control:
+      - Bumped DH level to 13.
+      - Set imagination-common as 'Multi-Arch: foreign'.
+  * debian/copyright: updated upstream email address.
+  * debian/imagination.lintian-overrides: changed from x86_64-linux-gnu to '*'
+    to make override compliant with all architectures.
+  * debian/imagination.manpages: created to provide a manpage, before installed
+    by debian/rules.
+  * debian/patches/20_fix-FTBFS-Makevars.patch: renamed to
+    010_fix-FTBFS-Makevars.patch.
+  * debian/rules: removed no longer needed override_dh_auto_install.
+  * debian/upstream/metadata: added Repository field.
+  * debian/upstream/net.sf.imagination.imagination.metainfo.xml: created to
+    provide an AppStream metadata file. Consequently:
+      - debian/copyright: updated to add rights for new file.
+      - debian/install: updated to install the file.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Sun, 12 Jul 2020 12:22:23 -0300
+
+imagination (3.5.1-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version 3.5.1.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Sat, 29 Feb 2020 14:31:43 -0300
+
+imagination (3.5-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version 3.5. (Closes: #829985)
+  * debian/control:
+      - Added 'Rules-Requires-Root: no' to source stanza.
+      - Bumped Standards-Version to 4.5.0.
+      - Changed libgtk2.0-dev to libgtk-3-dev in Build-Depends field.
+  * debian/copyright:
+      - Removed rights no longer existent.
+      - Updated upstream and packaging copyright years.
+  * debian/not-installed: created to list all .la files, to be not installed.
+  * debian/patches/:
+      - 15_add-keywords.patch: removed. The upstream fixed the source code.
+      - 30_modernize-autotools.patch: removed. The upstream fixed the source
+        code.
+  * debian/rules: removed a variable no longer needed
+    (DEB_LDFLAGS_MAINT_APPEND).
+  * debian/salsa-ci.yml: added to provide CI tests for Salsa.
+  * debian/tests/control: created to perform a trivial test.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Mon, 27 Jan 2020 00:57:40 -0300
+
+imagination (3.4-2) UNRELEASED; urgency=medium
+
+  * QA upload.
+  * Set upstream metadata fields: Contact, Name.
+  * Use secure URI in debian/watch.
+  * Update standards version, no changes needed.
+  * Set upstream metadata fields: Archive, Bug-Submit.
+  * Remove obsolete fields Name, Contact from debian/upstream/metadata.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Tue, 14 May 2019 01:01:16 +0000
+
+imagination (3.4-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version 3.4.
+  * Using new DH level format. Consequently:
+      - debian/compat: removed.
+      - debian/control: changed from 'debhelper' to 'debhelper-compat' in
+        Build-Depends field and bumped level to 12.
+  * debian/control:
+      - Added VCS fields.
+      - Bumped Standards-Version to 4.3.0.
+      - Removed no longer needed build dependency dh-autoreconf.
+  * debian/copyright:
+      - Removed section for no longer present files src/sexy-icon-entry.c and
+        src/sexy-icon-entry.h.
+      - Updated upstream and packaging copyright years.
+      - Using a secure copyright format in URI.
+  * debian/imagination.lintian-overrides: created to override a false positive.
+  * debian/patches/:
+      - 10_plugins-installed.patch: removed. The upstream is installing the
+        plugins now. Thanks!
+      - 20_fix-FTBFS-Makevars.patch: created to fix a FTBFS when running
+        dh_auto_test.
+      - 30_modernize-autotools.patch: added to fix some issues in autotools.
+  * debian/rules:
+      - Removed no longer needed addon autoreconf from dh.
+      - Removed no longer needed variable DEB_CFLAGS_MAINT_APPEND. The upstream
+        fixed the source code. Thanks.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Thu, 28 Feb 2019 07:44:46 -0300
+
+imagination (3.0-7) unstable; urgency=medium
+
+  * QA upload.
+  * Bumped DH level to 10.
+  * debian/control:
+      - Improved the long description.
+      - Removed Conflicts and Replaces fields because it was pointing to very
+        old versions of the imagination.
+      - Removed the unneeded variable ${shlibs:Depends} from
+        imagination-common binary.
+      - Removed the Vcs-* fields because the repository was never used.
+  * debian/copyright:
+      - Fixed the licensing for upstream.
+      - Updated some data.
+  * debian/imagination-common.doc-base: removed a duplicated word.
+  * debian/imagination.install: dropped dh-install.
+  * debian/rules:
+      - Added DEB_BUILD_MAINT_OPTIONS variable to improve the GCC hardening.
+      - Added DEB_CFLAGS_MAINT_APPEND variable to provide -lgmodule-2.0 and
+        -lm options to GCC.
+      - Added the DEB_LDFLAGS_MAINT_APPEND variable to avoid an  unnecessary
+        linking against libraries.
+  * debian/patches/:
+      - 10_link_math_lib.patch: removed. The upstream is using Makefile.am now
+        and the option -lm is being sent to CFLAGS via debian/rules.
+      - 15_PLUGINS_INSTALLED.patch:
+          ~ Added a header.
+          ~ Renamed to 10_plugins-installed.patch.
+      - hurd-rpath-ftbfs-fix.patch: removed. The issue was fixed by upstream.
+      - lib_underlinkage.patch: removed. The option -lm is being sent to CFLAGS
+        via debian/rules.
+      - 15_add-keywords.patch: created to provides the keywords field to
+        .desktop file.
+  * debian/source/options: created to ignore changes in some files.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Mon, 12 Dec 2016 17:53:33 -0200
+
+imagination (3.0-6) unstable; urgency=medium
+
+  * Orphan package and set Debian QA Group as maintainer.
+  * Drop 30_avconv_port.patch as ffmpeg is back in
+    the archive (Closes: #842657).
+  * Bump Standards-Version to 3.9.8, no changes.
+  * Drop unneeded menu file and xpm.
+
+ -- Andrew Starr-Bochicchio <asb@debian.org>  Wed, 23 Nov 2016 22:44:02 -0500
+
+imagination (3.0-5) unstable; urgency=medium
+
+  * Add patch porting to use avconv as ffmpeg was removed.
+    Thanks to Theppitak Karoonboonyanan! Closes: #722293
+  * Bump Standards-Version to 3.9.5
+  * Bump libav Recommends.
+
+ -- Andrew Starr-Bochicchio <asb@debian.org>  Wed, 06 Aug 2014 22:06:06 -0400
+
+imagination (3.0-4) unstable; urgency=medium
+
+  * Use dh-autoreconf instead of autotools-dev to fix FTBFS
+    on ppc64el. Thanks to Logan Rosen! Closes: #744595.
+
+ -- Andrew Starr-Bochicchio <asb@debian.org>  Tue, 17 Jun 2014 20:53:04 -0400
+
+imagination (3.0-3) unstable; urgency=low
+
+  * Promote libav suggests to recommends as they are in main now,
+    and bump versions for 0.8.
+  * lib_underlinkage.patch: Fix FTBFS by adding missing lib (Closes: #713447).
+  * Bump Standards-Version to 3.9.4, no changes needed.
+  * Use my @debian.org address in the maintainer field.
+
+ -- Andrew Starr-Bochicchio <asb@debian.org>  Sun, 30 Jun 2013 12:32:54 -0400
+
+imagination (3.0-2) unstable; urgency=low
+
+  * debian/copyright: Update formatting to comply with final
+    1.0 version of the machine readable copyright format.
+  * debian/control:
+   - Remove un-needed build dep on quilt.
+   - Packaging VCS has moved to a full source branch located
+     on Alioth. Update VCS fields accordingly.
+   - Bump Standards-Version to 3.9.3.1, no changes needed.
+   - Run wrap-and-sort over the package.
+   - Build depend on dh-exec.
+  * debian/patches/hurd-rpath-ftbfs-fix.patch: Fix FTBFS on
+    hurd-i386 due to libtool spuriously adding an rpath to
+    /usr/lib/i386-gnu. Thanks to Samuel Thibault. (Closes: #677346)
+  * debian/compat: Bump to version 9.
+  * debian/imagination.install: Use dh-exec substitution magic
+    to deal with new multiarch path.
+
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Fri, 15 Jun 2012 15:15:56 -0400
+
+imagination (3.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #627240).
+   - Fixes inverted tooltips in the toolbar (Closes: #599442).
+   - Adds updated Brazilian Portuguese (pt_BR) translation.
+     Thanks to Sérgio Cipolla (Closes: #599448).
+  * imagination.install: Don't install la files (Closes: #621684).
+  * Drop debian/README.source. Not needed with source
+    version 3.0 (quilt).
+  * Bump Standards-Version to 3.9.2, no changes needed.
+  * debian/rules: Convert to minimal dh 7 style rules file.
+  * Drop debian/patches/20_lang-zh_TW.patch: zh_TW translation
+    have been added upstream.
+  * Update debian/patches/15_PLUGINS_INSTALLED.patch and
+    debian/patches/10_link_math_lib.patch for new release.
+  * debian/{control, rules}: Maintain the different Ubuntu and
+    Debian recommends in the same source package using dpkg-vendor
+    and a ${dist:Recommends} substvar. Thanks to Alessio Treglia.
+    (Closes: #627246)
+  * debian/copyright: Minor tweaks to bring up to rev 174
+    of Dep 5.
+  * debian/control: Update suggests for libavutil-extra-50.
+
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Thu, 19 May 2011 13:22:01 -0400
+
+imagination (2.1-2) unstable; urgency=low
+
+  * Acknowledge non-maintainer upload.
+   - Thanks to 村仔 and Andrew Lee.
+  * debian/control:
+   - Add a depend on sox and a recommends on libsox-fmt-all
+     to provide proper audio support. (LP: #601559)
+   - Bump Standards-Version to 3.9.1, no changes needed.
+  * Convert to Debian source format 3.0 (quilt).
+
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Mon, 09 Aug 2010 20:34:10 -0400
+
+imagination (2.1-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Added zh_TW translations.
+    Thanks 村仔 <tw.chi.ming@gmail.com>
+
+ -- Andrew Lee (李健秋) <ajqlee@debian.org>  Mon, 17 May 2010 13:44:12 +0800
+
+imagination (2.1-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #551120)
+  * Split arch independent files into new binary, imagination-common.
+   - Rename debian/imagination.doc-base to debian/imagination-common.doc-base
+   - Add debian/imagination-common.install and debian/imagination.install
+   - debian/control:
+    + Add new binary, imagination-common.
+    + Add depends on imagination-common (= ${source:Version})
+    + Make imagination-common Conflict/Replace imagination (<= 2.0-1)
+   - debian/rules:
+    + Fill binary-indep target.
+    + Install to debian/tmp/
+  * debian/patches:
+   - 10_link_math_lib.patch: Adjust for new release.
+   - 15_PLUGINS_INSTALLED.patch: New patch, correctly load transitions.
+
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Mon, 19 Oct 2009 19:11:10 -0400
+
+imagination (2.0-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #543218)
+  * debian/control: Build-depend on xsltproc, docbook-xsl, quilt,
+    and doc-base.
+  * debian/imagination.doc-base: Register docs.
+  * debian/patches/10_link_math_lib.patch:
+   - Add '-lm' to link to the math lib.
+  * debian/README.source: Explain quilt.
+  * debian/rules: Add quilt magic.
+
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Tue, 29 Sep 2009 18:38:39 -0400
+
+imagination (1.5-3) unstable; urgency=low
+
+  * New maintainer. (Closes: #543846)
+  * debian/control:
+   - Add Vcs-* fields.
+   - Extend description.
+   - Rename Suggests on *-unstripped-* packages to the new
+     *-extra-* packages.
+  * Add debian/watch file.
+  * debian/copyright: Replace deprecated symbol (C) with ©.
+  * Move imagination.{xpm,1} to debian/ and install them from
+    debian/rules. Delete debian/manpages/, debian/pixmaps/, and
+    imagination.{manpages,install}.
+
+ -- Andrew Starr-Bochicchio <a.starr.b@gmail.com>  Mon, 31 Aug 2009 12:04:29 -0400
+
+imagination (1.5-2) unstable; urgency=low
+
+  * Updating package to standards version 3.8.3.
+  * Removing vcs fields.
+  * Orphaning package.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 27 Aug 2009 07:50:02 +0200
+
+imagination (1.5-1) unstable; urgency=low
+
+  * Merging upstream version 1.5 (Closes: #534885).
+  * Updating copyright file for new upstream release.
+  * Updating standards version to 3.8.2.
+  * Exporting have_ffmpeg to not require to have ffmpeg as unused build-
+    depends.
+  * Replacing build-depends on libxml-parser-perl with intltool.
+  * Adding libsox-dev to build-depends.
+  * Adding suggests to unstripped ffmpeg.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 07 Jul 2009 01:51:04 +0200
+
+imagination (1.0-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 12 May 2009 07:19:02 +0200

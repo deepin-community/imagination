@@ -1,0 +1,2 @@
+Test-Command: xvfb-run -a imagination &
+Depends: @, xauth, xvfb

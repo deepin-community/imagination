@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+ifeq ($(shell dpkg-vendor --derives-from Ubuntu && echo yes),yes)
+	SUBSTVARS = -Vdist:Recommends="libavformat-extra-55, libavutil-extra-53"
+else
+	SUBSTVARS = -Vdist:Recommends="libavformat55, libavutil53"
+endif
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_gencontrol:
+	dh_gencontrol -pimagination -- $(SUBSTVARS)
+	dh_gencontrol -pimagination-common

@@ -1,0 +1,12 @@
+Description: fix a FTBFS in imagination 3.4
+             po/Makevars must set a top_builddir
+Author: Joao Eriberto Mota Filho <eriberto@debian.org>
+Forwarded: https://sourceforge.net/p/imagination/feature-requests/68/
+Last-Update: 2019-02-28
+Index: imagination/po/Makevars
+===================================================================
+--- imagination.orig/po/Makevars
++++ imagination/po/Makevars
+@@ -1 +1,2 @@
++top_builddir = ..
+ XGETTEXT_KEYWORDS = -k_ -kN_ -kU_ -kgettext_noop

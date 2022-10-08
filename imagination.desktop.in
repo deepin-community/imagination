@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+_Name=Imagination
+_GenericName=A slideshow maker
+_Comment=A lightweight slideshow maker using GTK+2
+Exec=imagination %F
+Icon=imagination
+Terminal=false
+Categories=AudioVideo;
+StartupNotify=true
+Keywords=slideshow;video;audio;photos
+

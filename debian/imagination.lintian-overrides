@@ -1,0 +1,15 @@
+# False positives. The ldd command show links against libc.
+imagination: library-not-linked-against-libc usr/lib/*/imagination/bar_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/barn_door_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/bow_tie_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/box_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/clock_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/diagonal_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/ellipse_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/four_box_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/insert.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/misc_diagonal_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/misc_shape_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/push_wipe.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/rochade.so
+imagination: library-not-linked-against-libc usr/lib/*/imagination/wave.so

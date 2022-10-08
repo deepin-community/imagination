@@ -1,0 +1,14 @@
+Document: imagination
+Title: Imagination DVD Slide Show Creator
+Author: Giuseppe Torelli
+Abstract: Imagination is a lightweight DVD slide show creator
+ developed in C with the GTK+2 toolkit and Cairo. Imagination
+ is designed to be fast and easy-to-use. Its user interface
+ is clean and intuitive, and does not include any confusing or
+ useless options by default. It requires the ffmpeg encoder to
+ produce the movie file and libsox to import the audio files.
+Section: Video
+
+Format: HTML
+Index: /usr/share/doc/imagination/html/en/index.html
+Files: /usr/share/doc/imagination/html/en/*.html
